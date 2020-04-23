@@ -113,11 +113,6 @@
       }
     },
     "Order": {
-      "required": [
-        "analyseSentimentSecret",
-        "detectLanguageSecret",
-        "text"
-      ],
       "type": "object",
       "properties": {
         "CustomerName": {
@@ -127,8 +122,10 @@
           "type": "string"
         },
         "OrderItems": {
-          "type": "array",
-			"$ref": "#/definitions/OrderItem"
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/OrderItem"
+			}
         }
       }
     },
