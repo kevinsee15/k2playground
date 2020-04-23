@@ -83,16 +83,13 @@
 			"format": "date-time"
         },
         "menuItems": {
-			"$ref": "#/definitions/MenuItemList"
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/MenuItem"
+			}
         }
       }
     },
-	"MenuItemList": {
-		"type": "array",
-		"items": {
-			"$ref": "#/definitions/MenuItem"
-		}
-	},
     "MenuItem": {
       "type": "object",
       "properties": {
