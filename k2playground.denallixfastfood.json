@@ -128,7 +128,32 @@
         },
         "OrderItems": {
           "type": "array",
-			"$ref": "#/definitions/MenuItem"
+			"$ref": "#/definitions/OrderItem"
+        }
+      }
+    },
+    "OrderItem": {
+      "type": "object",
+      "properties": {
+        "menuItemId": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "unitPrice": {
+          "format": "float",
+          "type": "number"
+        },
+        "quantity": {
+          "type": "integer"
+        },
+        "totalPrice": {
+          "format": "float",
+          "type": "number"
         }
       }
     }
