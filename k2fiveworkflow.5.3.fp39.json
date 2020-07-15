@@ -53,7 +53,7 @@
 					"type": "object"
 				  }
 				}
-				},
+				}, 
 				"default": {
 				"description": "Custom Action Taken."
 				}
