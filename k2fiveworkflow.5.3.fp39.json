@@ -48,7 +48,7 @@
 				"400": {
 				"description": "Returns information about the error that occurred.",
 				
-            			"schema": { "type": "string" },
+            			"schema": { "$ref": "#/definitions/ErrorModel" },
 				},
 				"404": {
 				"description": "Returns information about the error that occurred.",
@@ -70,6 +70,12 @@
       }
    },
    "definitions":{  
+	   "ErrorModel": {"type": "object",
+			"properties": {
+				"Message": {
+					"type": "string"
+				}
+			}},
 		"UpdateFieldsRequest": {
 			"type": "object",
 			"properties": {
