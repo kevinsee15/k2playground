@@ -79,7 +79,7 @@
 				}
 			}
 		},
-		"RemoteWorkflow_Parameters": {
+		"RemoteTask_Parameters": {
 			"type": "object",
 			"properties": {
 				"Remote Workflow Message": {
