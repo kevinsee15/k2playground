@@ -7,7 +7,7 @@
   "host": "c-177-azn85y5db.cloudapp.net",
   "basePath": "/Api/Workflow/Preview",
   "schemes": [
-    "https"
+    "http"
   ],
    "paths":{  
       "/tasks/{serialNumber}/actions/{customAction}":{  
