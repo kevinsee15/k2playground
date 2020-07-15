@@ -82,10 +82,10 @@
 		"RemoteTask_Parameters": {
 			"type": "object",
 			"properties": {
-				"Remote Workflow Message": {
+				"RemoteWorkflowMessage": {
 					"type": "string"
 				},
-				"Remote Workflow Action": {
+				"RemoteWorkflowAction": {
 					"type": "string"
 				}
 			}
