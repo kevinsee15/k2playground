@@ -47,12 +47,8 @@
 				},
 				"400": {
 				"description": "Returns information about the error that occurred.",
-				"schema": {
-				  "type": "object",
-				  "additionalProperties": {
-					"type": "object"
-				  }
-				}
+				
+            			"schema": { "type": "string" },
 				},
 				"404": {
 				"description": "Returns information about the error that occurred.",
