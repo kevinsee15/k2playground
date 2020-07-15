@@ -1,0 +1,106 @@
+{  
+  "swagger": "2.0",
+  "info": {
+    "version": "preview",
+    "title": "K2 Workflow Api"
+  },
+  "host": "c-177-azn85y5db.cloudapp.net",
+  "basePath": "/Api/Workflow/Preview",
+  "schemes": [
+    "https"
+  ],
+   "paths":{  
+      "/tasks/{serialNumber}/actions/{customAction}":{  
+         "post":{  
+			"summary": "Perform Custom Action",
+			"operationId": "PerformCustomAction",
+			"consumes": [
+			  "application/json",
+			  "text/json",
+			  "application/x-www-form-urlencoded"
+			],
+			"parameters": [
+			  {
+				"name": "serialNumber",
+				"in": "path",
+				"required": true,
+				"type": "string"
+			  },
+			  {
+				"name": "customAction",
+				"in": "path",
+				"required": true,
+				"type": "string"
+			  },
+			  {
+				"name": "userDefinedFields",
+				"in": "body",
+				"required": true,
+				"schema": {
+				  "$ref": "#/definitions/UpdateFieldsRequest"
+				}
+			  }
+			],
+			"responses": {
+				"204": {
+				"description": "Custom Action Taken."
+				},
+				"400": {
+				"description": "Returns information about the error that occurred.",
+				"schema": {
+				  "type": "object",
+				  "additionalProperties": {
+					"type": "object"
+				  }
+				}
+				},
+				"404": {
+				"description": "Returns information about the error that occurred.",
+				"schema": {
+				  "type": "object",
+				  "additionalProperties": {
+					"type": "object"
+				  }
+				}
+				},
+				"default": {
+				"description": "Custom Action Taken."
+				}
+			},
+            "security":[  
+
+            ]
+         }
+      }
+   },
+   "definitions":{  
+		"UpdateFieldsRequest": {
+			"type": "object",
+			"properties": {
+				"dataFields": {
+					"$ref": "#/definitions/RemoteTask_Parameters"
+				}
+			}
+		},
+		"RemoteWorkflow_Parameters": {
+			"type": "object",
+			"properties": {
+				"Remote Workflow Message": {
+					"type": "string"
+				},
+				"Remote Workflow Action": {
+					"type": "string"
+				}
+			}
+		}
+   },
+   "securityDefinitions":{  
+
+   },
+   "security":[  
+
+   ],
+   "tags":[  
+
+   ]
+}
