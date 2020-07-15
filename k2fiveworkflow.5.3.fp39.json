@@ -77,7 +77,7 @@
 		"UpdateFieldsRequest": {
 			"type": "object",
 			"properties": {
-				"dataFields": {
+				"DataFields": {
 					"$ref": "#/definitions/RemoteTask_Parameters"
 				}
 			}
