@@ -1,0 +1,103 @@
+{  
+  "swagger": "2.0",
+  "info": {
+    "version": "preview",
+    "title": "K2 Workflow Api"
+  },
+  "host": "c-177-azn85y5db.cloudapp.net",
+  "basePath": "/Api/Workflow/Preview",
+  "schemes": [
+    "http"
+  ],
+   "paths":{  
+      "/tasks/{serialNumber}/actions/{customAction}":{  
+         "post":{  
+			"summary": "Perform Custom Action",
+			"operationId": "PerformCustomAction",
+			"parameters": [
+			  {
+				"name": "serialNumber",
+				"in": "path",
+				"required": true,
+				"type": "string"
+			  },
+			  {
+				"name": "customAction",
+				"in": "path",
+				"required": true,
+				"type": "string"
+			  },
+			  {
+				"name": "userDefinedFields",
+				"in": "body",
+				"required": false,
+				"schema": {
+				  "$ref": "#/definitions/UpdateFieldsRequest"
+				}
+			  }
+			],
+			"responses": {
+				"204": {
+				"description": "Custom Action Taken."
+				},
+				"400": {
+				"description": "Returns information about the error that occurred.",
+				
+            			"schema": { "$ref": "#/definitions/ErrorModel" },
+				},
+				"404": {
+				"description": "Returns information about the error that occurred.",
+				"schema": {
+				  "type": "object",
+				  "additionalProperties": {
+					"type": "object"
+				  }
+				}
+				}, 
+				"default": {
+				"description": "Custom Action Taken."
+				}
+			},
+            "security":[  
+
+            ]
+         }
+      }
+   },
+   "definitions":{  
+	   "ErrorModel": {"type": "object",
+			"properties": {
+				"Message": {
+					"type": "string"
+				}
+			}},
+		"UpdateFieldsRequest": {
+			"type": "object",
+			"properties": {
+				"DataFields": {
+					"$ref": "#/definitions/RemoteTask_Parameters"
+				}
+			}
+		},
+		"RemoteTask_Parameters": {
+			"type": "object",
+			"properties": {
+				"Remote Workflow Message": {
+					"type": "string"
+				},
+				"Remote Workflow Action": {
+					"type": "string"
+				}
+			}
+		}
+   },
+   "securityDefinitions":{  
+
+   },
+   "security":[  
+
+   ],
+   "tags":[  
+
+   ]
+}
