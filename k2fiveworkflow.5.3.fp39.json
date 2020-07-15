@@ -26,6 +26,14 @@
 				"in": "path",
 				"required": true,
 				"type": "string"
+			  },
+			  {
+				"name": "userDefinedFields",
+				"in": "body",
+				"required": false,
+				"schema": {
+				  "$ref": "#/definitions/UpdateFieldsRequest"
+				}
 			  }
 			],
 			"responses": {
